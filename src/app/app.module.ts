@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CreatorDetailsFormComponent } from './creator-details-form/creator-details-form.component';
+import { reducer } from './reducers/person.reducer';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,10 @@ import { CreatorDetailsFormComponent } from './creator-details-form/creator-deta
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({
+      person: reducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,12 @@
+@import '../scss/base/variables';
+
+.hero.is-fullheight {
+    .hero-body {
+        align-items: flex-start;
+    }
+}
+
+.container .navbar-brand {
+    margin-left: 0;
+    margin-top: 1em;
+}

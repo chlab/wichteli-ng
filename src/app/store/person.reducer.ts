@@ -1,13 +1,5 @@
-import { Person } from '../models/person.model';
-import * as PersonActions from '../actions/person.actions';
-
-export interface State {
-  participants: Person[];
-}
-
-export const initialState: State = {
-  participants: []
-};
+import * as PersonActions from './person.actions';
+import { initialState, State } from '../app.state';
 
 export function reducer(state: State = initialState, action: PersonActions.Actions) {
   switch (action.type) {

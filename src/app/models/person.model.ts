@@ -1,5 +1,7 @@
-export interface Person {
-  id: string;
-  name: string;
-  email: string;
+import { uniqueId } from 'lodash-es';
+
+export class Person {
+  id = uniqueId();
+  name = '';
+  email = '';
 }

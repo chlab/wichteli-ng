@@ -5,7 +5,9 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CreatorDetailsFormComponent } from './creator-details-form/creator-details-form.component';
-import { reducer } from './reducers/person.reducer';
+import { reducer } from './store/person.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,10 @@ import { reducer } from './reducers/person.reducer';
     FormsModule,
     StoreModule.forRoot({
       person: reducer
-    })
+    }),
+    !environment.production
+      ? StoreDevtoolsModule.instrument({ maxAge: 20 })
+      : []
   ],
   providers: [],
   bootstrap: [AppComponent]

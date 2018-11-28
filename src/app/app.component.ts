@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AddPerson } from './store/person.actions';
-import { Person } from './models/person.model';
+import { AddParticipant } from './store/participant.actions';
+import { Participant } from './models/participant.model';
 import { Store } from '@ngrx/store';
-import { State } from './app.state';
+import { State } from './store/app.state';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,6 @@ export class AppComponent implements OnInit{
   constructor(private store: Store<State>) {}
 
   ngOnInit() {
-    this.store.dispatch(new AddPerson(new Person()));
+    this.store.dispatch(new AddParticipant(new Participant()));
   }
 }

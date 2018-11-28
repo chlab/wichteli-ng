@@ -5,7 +5,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CreatorDetailsFormComponent } from './creator-details-form/creator-details-form.component';
-import { reducer } from './store/person.reducer';
+import { reducer } from './store/participant.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
@@ -18,7 +18,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     FormsModule,
     StoreModule.forRoot({
-      person: reducer
+      participant: reducer
     }),
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 20 })

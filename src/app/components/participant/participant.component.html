@@ -1,17 +1,16 @@
-<h2 class="subtitle">First things first - who are you?</h2>
 <div class="field is-horizontal">
   <div class="field-body">
     <div class="field">
       <label class="label">
         What's your name?
-        <input [(ngModel)]="creator.name" type="text" class="input" placeholder="Your name">
+        <input type="text" [value]="participant.name" class="input" placeholder="Your name">
       </label>
     </div>
 
     <div class="field">
       <label class="label">
         What's your e-mail address?
-        <input [(ngModel)]="creator.email" type="text" class="input" placeholder="Your e-mail address?">
+        <input type="text" [value]="participant.email" class="input" placeholder="Your e-mail address?">
       </label>
     </div>
   </div>

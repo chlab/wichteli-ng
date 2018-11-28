@@ -1,9 +1,9 @@
 import { Participant } from '../models/participant.model';
 
-export interface State {
+export interface AppState {
   participants: Participant[];
 }
 
-export const initialState: State = {
+export const initialState: AppState = {
   participants: []
 };

@@ -1,16 +1,21 @@
 import { Person } from '../models/person.model';
 import * as PersonActions from '../actions/person.actions';
 
-const initialState: Person = {
-  id: '',  // TODO
-  name: '',
-  email: ''
+export interface State {
+  participants: Person[];
+}
+
+export const initialState: State = {
+  participants: []
 };
 
-export function reducer(state: Person[] = [initialState], action: PersonActions.Actions) {
+export function reducer(state: State = initialState, action: PersonActions.Actions) {
   switch (action.type) {
     case PersonActions.ADD_PERSON:
-      return [...state, action.payload];
+      const participants = state.participants;
+      participants.push(action.payload);
+      return {...state, participants};
+
     default:
       return state;
   }
